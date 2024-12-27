@@ -1,0 +1,171 @@
+$SpaceCadet: #1D1E35;
+$burntsienna: #F47C57;
+$amethyst: #AF67E9;
+$taupegray: #787887;
+$charcoal: #4A4D5E;
+$gradient:linear-gradient(180deg, #AF68EA 26.9%, #7B64E6 100%);
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  background: $gradient;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 90vw;
+  width: 80vw;
+  padding: 20px 30px 60px 30px;
+  box-shadow: 0 4px 8px rgba(120, 120, 135, 0.2);
+  margin: 30px 0;
+}
+
+.image-box {
+  .desktop {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    width: 50vw;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+
+  h1 {
+    font-size: 40px;
+    text-transform: uppercase;
+    text-align: center;
+  }
+}
+
+
+.accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.accordion-item {
+  border-bottom: 1px solid rgba(120, 120, 135, 0.2);
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+.accordion-item {
+  &.open {
+    .accordion-title {
+      h3 {
+        cursor: pointer;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.accordion-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  
+  h3 {
+    transition: all 0.3s;
+    font-weight: normal;
+    font-size: 16px;
+
+    &:hover {
+      color: $burntsienna;
+    }
+  }
+}
+
+.accordion-content {
+  font-size: 13px;
+  line-height: 150%;
+  color: $taupegray;
+}
+
+@media (width >= 1024px) {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .card {
+    flex-direction: row;
+    gap: 80px;
+    padding: 50px 30px;
+    margin: 10px;
+    max-width: 70vw;
+    width: 70vw;
+  }
+
+  .image-box {
+    width: 40%;
+
+    img {
+      width: 100%;
+    }
+
+    .desktop {
+      display: block;
+    }
+
+    .mobile {
+      display: none;
+    }
+  }
+
+  form {
+    width: 40vw;
+    max-width: 80vw;
+    gap: 20px;
+
+    h1 {
+      text-align: left;
+      font-size: 53px;
+    }
+  }
+
+  .accordion-item {
+    padding: 10px 0;
+    gap: 5px;
+  }
+
+  .accordion-title {
+    h3 {
+      font-size: 17px;
+    }
+  }
+
+  .accordion-content {
+    font-size: 15px;
+    line-height: 110%;
+  }
+}
